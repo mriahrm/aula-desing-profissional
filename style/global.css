@@ -1,0 +1,68 @@
+:root {
+  color-scheme: light dark;
+  --bg: light-dark(#efeefb, #14122b);
+  --card: light-dark(#fff, #1e1b3d);
+  --ink: light-dark(#1d1a3a, #eceaff);
+  --cor: light-dark(#5b3df5, #9a86ff);
+  --linha: light-dark(#e0def3, #322e5e);
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+table {
+  width: 100%;
+  background: var(--card);
+  border-radius: 16px;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+th {
+  text-align: left;
+  padding: 12px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+td {
+  padding: 12px;
+  border-top: 1px solid var(--linha);
+}
+
+td:nth-child(2) {
+  font-weight: 700;
+  color: var(--cor);
+  white-space: nowrap;
+}
+
+input {
+  width: 56px;
+  padding: 8px;
+  font: inherit;
+  border-radius: 8px;
+  border: 1px solid var(--linha);
+}
+
+button {
+  padding: 10px 14px;
+  font: inherit;
+  font-weight: 600;
+  border: 0;
+  border-radius: 10px;
+  background: var(--cor);
+  color: var(--bg);
+}
+
+.vazio {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+}
