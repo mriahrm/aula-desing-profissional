@@ -7,103 +7,73 @@
   <link rel="stylesheet" href="style/global.css">
 </head>
 <body>
-<form>
-  <input type="checkbox" id="fim" class="oculto">
-
-  <nav class="topo">
-    <div class="centro">
-      <a class="logo" href="#">🛍️ Loginha de Programa</a>
-      <span class="chip contador"></span>
-    </div>
-  </nav>
-
-  <header class="destaque">
-    <div class="centro">
-      <h1>Periféricos para o seu setup</h1>
-      <p>Escolha um produto, defina a quantidade e veja tudo na sua sacola.</p>
-    </div>
+  <header class="topo">
+    <h1>🛒 Loginha de Programa</h1>
+    <p>Equipamentos para quem programa</p>
   </header>
 
-  <main class="centro conteudo">
-    <section>
-      <h2>Escolha o produto</h2>
-      <div class="abas">
-        <input type="radio" name="produto" id="v1" class="oculto" checked><label for="v1">⌨️ Teclado</label>
-        <input type="radio" name="produto" id="v2" class="oculto"><label for="v2">🖱️ Mouse</label>
-        <input type="radio" name="produto" id="v3" class="oculto"><label for="v3">🎙️ Microfone</label>
-        <input type="radio" name="produto" id="v4" class="oculto"><label for="v4">🎧 Headset</label>
-        <input type="radio" name="produto" id="v5" class="oculto"><label for="v5">📷 Webcam</label>
+  <main class="container">
+    <section class="card">
+      <h2>Produtos</h2>
+      <div class="tabela-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Preço</th>
+              <th>Estoque</th>
+              <th>Qtd.</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="produto">⌨️ Teclado</td>
+              <td>R$ 120,00</td>
+              <td>5</td>
+              <td><input type="number" value="1" min="1" max="5"></td>
+              <td><button class="btn">Adicionar</button></td>
+            </tr>
+            <tr>
+              <td class="produto">🖱️ Mouse</td>
+              <td>R$ 60,00</td>
+              <td>8</td>
+              <td><input type="number" value="1" min="1" max="8"></td>
+              <td><button class="btn">Adicionar</button></td>
+            </tr>
+            <tr>
+              <td class="produto">🎙️ Microfone</td>
+              <td>R$ 250,00</td>
+              <td>3</td>
+              <td><input type="number" value="1" min="1" max="3"></td>
+              <td><button class="btn">Adicionar</button></td>
+            </tr>
+            <tr>
+              <td class="produto">🎧 Headset</td>
+              <td>R$ 180,00</td>
+              <td>4</td>
+              <td><input type="number" value="1" min="1" max="4"></td>
+              <td><button class="btn">Adicionar</button></td>
+            </tr>
+            <tr>
+              <td class="produto">📷 Webcam</td>
+              <td>R$ 200,00</td>
+              <td>2</td>
+              <td><input type="number" value="1" min="1" max="2"></td>
+              <td><button class="btn">Adicionar</button></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <article class="produto p1">
-        <div class="icone">⌨️</div>
-        <div>
-          <h3>Teclado</h3>
-          <p class="preco">R$ 120,00</p>
-          <p class="estoque"></p>
-          <label for="q1">Quantidade na sacola</label>
-          <select id="q1"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
-        </div>
-      </article>
-      <article class="produto p2">
-        <div class="icone">🖱️</div>
-        <div>
-          <h3>Mouse</h3>
-          <p class="preco">R$ 60,00</p>
-          <p class="estoque"></p>
-          <label for="q2">Quantidade na sacola</label>
-          <select id="q2"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
-        </div>
-      </article>
-      <article class="produto p3">
-        <div class="icone">🎙️</div>
-        <div>
-          <h3>Microfone</h3>
-          <p class="preco">R$ 250,00</p>
-          <p class="estoque"></p>
-          <label for="q3">Quantidade na sacola</label>
-          <select id="q3"><option>0</option><option>1</option><option>2</option><option>3</option></select>
-        </div>
-      </article>
-      <article class="produto p4">
-        <div class="icone">🎧</div>
-        <div>
-          <h3>Headset</h3>
-          <p class="preco">R$ 180,00</p>
-          <p class="estoque"></p>
-          <label for="q4">Quantidade na sacola</label>
-          <select id="q4"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select>
-        </div>
-      </article>
-      <article class="produto p5">
-        <div class="icone">📷</div>
-        <div>
-          <h3>Webcam</h3>
-          <p class="preco">R$ 200,00</p>
-          <p class="estoque pouco"></p>
-          <label for="q5">Quantidade na sacola</label>
-          <select id="q5"><option>0</option><option>1</option><option>2</option></select>
-        </div>
-      </article>
     </section>
 
-    <aside class="sacola">
-      <h2>Sua sacola</h2>
-      <p class="vazia">🛍️<br>Sua sacola está vazia.</p>
-      <div class="linha l1"><span>⌨️</span><div><b></b><small></small></div></div>
-      <div class="linha l2"><span>🖱️</span><div><b></b><small></small></div></div>
-      <div class="linha l3"><span>🎙️</span><div><b></b><small></small></div></div>
-      <div class="linha l4"><span>🎧</span><div><b></b><small></small></div></div>
-      <div class="linha l5"><span>📷</span><div><b></b><small></small></div></div>
-      <div class="resumo">
-        <div class="total"><span>Total</span><span class="soma"></span></div>
-        <div class="acoes">
-          <label for="fim" class="principal">Finalizar compra</label>
-          <button type="reset" class="secundario">Limpar</button>
-        </div>
+    <section class="card">
+      <h2>Carrinho</h2>
+      <div class="vazio">
+        <p>🛒 O carrinho está vazio.</p>
+        <button class="btn btn-principal">Finalizar compra</button>
       </div>
-      <p class="obrigado">🎉 Compra finalizada!<br>Total pago: <span class="soma"></span></p>
-    </aside>
+    </section>
   </main>
-</form>
 </body>
 </html>
