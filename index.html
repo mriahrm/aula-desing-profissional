@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
@@ -11,7 +11,7 @@
   <nav class="navbar">
     <div class="navbar-conteudo">
       <span class="logo">🛒 Lojinha<strong>Dev</strong></span>
-      <span class="navbar-carrinho">🛒 Carrinho <b>0</b></span>
+      <span class="navbar-carrinho">🛒 Carrinho <b id="contador-nav">0</b></span>
     </div>
   </nav>
 
@@ -26,95 +26,23 @@
     <section class="painel">
       <div class="painel-titulo">
         <h2>Produtos</h2>
-        <span class="contador">5 itens</span>
+        <span class="contador" id="contador-produtos">5 itens</span>
       </div>
-
-      <div class="grade">
-
-        <article class="produto">
-          <div class="produto-imagem">⌨️</div>
-          <div class="produto-info">
-            <h3>Teclado</h3>
-            <span class="selo selo-ok">5 em estoque</span>
-          </div>
-          <div class="produto-preco">R$ 120,00</div>
-          <div class="produto-acoes">
-            <input type="number" value="1" min="1" max="5">
-            <button class="btn">Adicionar</button>
-          </div>
-        </article>
-
-        <article class="produto">
-          <div class="produto-imagem">🖱️</div>
-          <div class="produto-info">
-            <h3>Mouse</h3>
-            <span class="selo selo-ok">8 em estoque</span>
-          </div>
-          <div class="produto-preco">R$ 60,00</div>
-          <div class="produto-acoes">
-            <input type="number" value="1" min="1" max="8">
-            <button class="btn">Adicionar</button>
-          </div>
-        </article>
-
-        <article class="produto">
-          <div class="produto-imagem">🎙️</div>
-          <div class="produto-info">
-            <h3>Microfone</h3>
-            <span class="selo selo-baixo">3 em estoque</span>
-          </div>
-          <div class="produto-preco">R$ 250,00</div>
-          <div class="produto-acoes">
-            <input type="number" value="1" min="1" max="3">
-            <button class="btn">Adicionar</button>
-          </div>
-        </article>
-
-        <article class="produto">
-          <div class="produto-imagem">🎧</div>
-          <div class="produto-info">
-            <h3>Headset</h3>
-            <span class="selo selo-ok">4 em estoque</span>
-          </div>
-          <div class="produto-preco">R$ 180,00</div>
-          <div class="produto-acoes">
-            <input type="number" value="1" min="1" max="4">
-            <button class="btn">Adicionar</button>
-          </div>
-        </article>
-
-        <article class="produto">
-          <div class="produto-imagem">📷</div>
-          <div class="produto-info">
-            <h3>Webcam</h3>
-            <span class="selo selo-baixo">2 em estoque</span>
-          </div>
-          <div class="produto-preco">R$ 200,00</div>
-          <div class="produto-acoes">
-            <input type="number" value="1" min="1" max="2">
-            <button class="btn">Adicionar</button>
-          </div>
-        </article>
-
-      </div>
+      <div class="grade" id="grade"></div>
     </section>
 
     <aside class="painel carrinho">
       <div class="painel-titulo">
         <h2>Carrinho</h2>
-        <span class="contador">0 itens</span>
+        <span class="contador" id="contador-carrinho">0 itens</span>
       </div>
 
-      <div class="vazio">
-        <div class="vazio-icone">🛒</div>
-        <p>O carrinho está vazio.</p>
-        <small>Adicione produtos para começar.</small>
-      </div>
+      <div id="lista-carrinho"></div>
 
       <div class="resumo">
         <div class="resumo-linha">
           <span>Subtotal</span>
-          <span>R$ 0,00</span>
+          <span id="subtotal">R$ 0,00</span>
         </div>
         <div class="resumo-linha">
           <span>Frete</span>
@@ -122,18 +50,21 @@
         </div>
         <div class="resumo-linha resumo-total">
           <span>Total</span>
-          <span>R$ 0,00</span>
+          <span id="total">R$ 0,00</span>
         </div>
       </div>
 
-      <button class="btn btn-principal">Finalizar compra</button>
+      <button class="btn btn-principal" id="btn-finalizar">Finalizar compra</button>
     </aside>
 
   </main>
 
   <footer class="rodape">
-    <p>© 2026 LojinhaDev • Feito com HTML e CSS</p>
+    <p>© 2026 LojinhaDev • Feito com HTML, CSS e JavaScript</p>
   </footer>
 
+  <div class="aviso" id="aviso"></div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

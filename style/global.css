@@ -16,7 +16,9 @@
   --primaria-escura: #6342f0;
   --verde: #3fb950;
   --amarelo: #e3b341;
+  --vermelho: #f85149;
   --raio: 14px;
+  color-scheme: dark;
 }
 
 body {
@@ -211,6 +213,12 @@ body {
   background: rgba(227, 179, 65, 0.1);
 }
 
+.selo-esgotado {
+  color: var(--vermelho);
+  border-color: rgba(248, 81, 73, 0.4);
+  background: rgba(248, 81, 73, 0.1);
+}
+
 .produto-preco {
   font-size: 1.4rem;
   font-weight: 700;
@@ -269,6 +277,16 @@ input[type="number"]:focus {
   margin-top: 18px;
 }
 
+.btn:disabled,
+input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+  background: var(--primaria);
+}
+
 /* ---------- Carrinho ---------- */
 .carrinho {
   position: sticky;
@@ -291,6 +309,49 @@ input[type="number"]:focus {
 
 .vazio small {
   color: var(--texto-suave);
+}
+
+.item-carrinho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: var(--superficie-2);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-info small {
+  color: var(--texto-suave);
+}
+
+.item-direita {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.btn-remover {
+  background: none;
+  border: 1px solid rgba(248, 81, 73, 0.5);
+  color: var(--vermelho);
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.btn-remover:hover {
+  background: rgba(248, 81, 73, 0.12);
 }
 
 .resumo {
@@ -325,6 +386,35 @@ input[type="number"]:focus {
   font-size: 0.85rem;
   border-top: 1px solid var(--borda);
   background: var(--superficie);
+}
+
+/* ---------- Aviso (mensagem na tela) ---------- */
+.aviso {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--superficie-2);
+  border: 1px solid var(--primaria);
+  color: var(--texto);
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+  z-index: 20;
+  max-width: 90%;
+  text-align: center;
+}
+
+.aviso.erro {
+  border-color: var(--vermelho);
+}
+
+.aviso.mostrar {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* ---------- Responsivo ---------- */
