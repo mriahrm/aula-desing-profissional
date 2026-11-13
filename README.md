@@ -1,5 +1,6 @@
 # LojinhaDev — loja de periféricos
 
+<<<<<<< HEAD
 Loja virtual de periféricos de informática com login, catálogo, carrinho e
 uma área para o profissional cadastrar produtos e controlar o estoque.
 
@@ -79,3 +80,18 @@ instance/         Banco de dados e chave secreta, criados automaticamente (fora 
 ## Tecnologias
 
 HTML, CSS e JavaScript no front-end. Python (Flask) e SQLite no back-end.
+=======
+Objetivo do site: é criar uma loja virtual, onde o usuário pode visualizar produtos, consultar preços e adicionar itens ao carrinho de compras.
+O que foi criado: Foi desenvolvida uma página com tema escuro, contendo menu de navegação, apresentação dos produtos, preços, indicação de estoque e área do carrinho de compras. Também foram criados botões e campos para adicionar produtos.
+O que falta fazer: Falta implementar as funcionalidades do carrinho, como calcular o valor total, finalizar a compra e integrar o site a um banco de dados para armazenar os produtos e as informações das compras.
+Tecnologias utilizadas: HTML para estruturar a página e CSS para criar o visual e organizar os elementos...
+
+INICIAR APP:
+python -m venv .venv
+
+SE DER MUITO RUIM: Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\.venv\Scripts\Activate.ps1
+
+pip install -r requirements.txt
+python app.py
+>>>>>>> c5dfe909b4ecef2003c4db735d56d3f86c8a2890
