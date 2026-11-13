@@ -1,17 +1,23 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LojinhaDev</title>
-  <link rel="stylesheet" href="style/global.css">
+  <link rel="stylesheet" href="/style/global.css">
 </head>
 <body>
 
   <nav class="navbar">
     <div class="navbar-conteudo">
       <span class="logo">🛒 Lojinha<strong>Dev</strong></span>
-      <span class="navbar-carrinho">🛒 Carrinho <b id="contador-nav">0</b></span>
+      <div class="navbar-acoes">
+        <span class="navbar-usuario">Olá, <b id="nome-usuario">…</b></span>
+        <a class="link-nav" id="link-admin" href="/admin" hidden>Área do profissional</a>
+        <button class="link-nav" id="btn-meus-pedidos" type="button">Meus pedidos</button>
+        <a class="navbar-carrinho" href="#carrinho">🛒 Carrinho <b id="contador-nav">0</b></a>
+        <button class="link-nav link-sair" id="btn-sair" type="button">Sair</button>
+      </div>
     </div>
   </nav>
 
@@ -26,12 +32,18 @@
     <section class="painel">
       <div class="painel-titulo">
         <h2>Produtos</h2>
-        <span class="contador" id="contador-produtos">5 itens</span>
+        <span class="contador" id="contador-produtos">carregando…</span>
       </div>
+
+      <div class="filtros">
+        <input type="search" id="busca" placeholder="Buscar produto…" aria-label="Buscar produto">
+        <div class="chips" id="categorias"></div>
+      </div>
+
       <div class="grade" id="grade"></div>
     </section>
 
-    <aside class="painel carrinho">
+    <aside class="painel carrinho" id="carrinho">
       <div class="painel-titulo">
         <h2>Carrinho</h2>
         <span class="contador" id="contador-carrinho">0 itens</span>
@@ -54,17 +66,44 @@
         </div>
       </div>
 
-      <button class="btn btn-principal" id="btn-finalizar">Finalizar compra</button>
+      <button class="btn btn-principal" id="btn-finalizar" type="button">Finalizar compra</button>
     </aside>
 
   </main>
 
   <footer class="rodape">
-    <p>© 2026 LojinhaDev • Feito com HTML, CSS e JavaScript</p>
+    <p>© 2026 LojinhaDev • Feito com HTML, CSS, JavaScript e Python</p>
   </footer>
 
-  <div class="aviso" id="aviso"></div>
+  <!-- Confirmação de compra -->
+  <div class="modal-fundo" id="modal-compra" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="titulo-compra">
+      <div class="modal-cabecalho">
+        <h2 id="titulo-compra">Confirmar compra</h2>
+        <button class="modal-fechar" data-fechar-modal aria-label="Fechar">✕</button>
+      </div>
+      <div id="resumo-compra"></div>
+      <div class="modal-rodape">
+        <button class="btn btn-secundario" data-fechar-modal type="button">Cancelar</button>
+        <button class="btn" id="btn-confirmar-compra" type="button">Confirmar pagamento</button>
+      </div>
+    </div>
+  </div>
 
-  <script src="js/script.js"></script>
+  <!-- Meus pedidos -->
+  <div class="modal-fundo" id="modal-pedidos" hidden>
+    <div class="modal modal-largo" role="dialog" aria-modal="true" aria-labelledby="titulo-pedidos">
+      <div class="modal-cabecalho">
+        <h2 id="titulo-pedidos">Meus pedidos</h2>
+        <button class="modal-fechar" data-fechar-modal aria-label="Fechar">✕</button>
+      </div>
+      <div id="lista-pedidos" class="lista-pedidos"></div>
+    </div>
+  </div>
+
+  <div class="aviso" id="aviso" role="status"></div>
+
+  <script src="/scripts/comum.js"></script>
+  <script src="/scripts/index.js"></script>
 </body>
 </html>

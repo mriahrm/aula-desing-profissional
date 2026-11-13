@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar • LojinhaDev</title>
+  <link rel="stylesheet" href="/style/global.css">
+</head>
+<body class="pagina-login">
+
+  <main class="login-caixa">
+    <div class="login-marca">
+      <span class="logo">🛒 Lojinha<strong>Dev</strong></span>
+      <p>Periféricos para o seu setup de programador.</p>
+    </div>
+
+    <div class="abas" role="tablist">
+      <button class="aba ativa" data-aba="entrar" role="tab">Entrar</button>
+      <button class="aba" data-aba="cadastrar" role="tab">Criar conta</button>
+    </div>
+
+    <form id="form-entrar" class="formulario" novalidate>
+      <label>
+        E-mail
+        <input type="email" name="email" autocomplete="username" required>
+      </label>
+      <label>
+        Senha
+        <input type="password" name="senha" autocomplete="current-password" required>
+      </label>
+      <button class="btn btn-principal" type="submit">Entrar</button>
+    </form>
+
+    <form id="form-cadastrar" class="formulario" novalidate hidden>
+      <label>
+        Nome
+        <input type="text" name="nome" autocomplete="name" maxlength="80" required>
+      </label>
+      <label>
+        E-mail
+        <input type="email" name="email" autocomplete="email" maxlength="120" required>
+      </label>
+      <label>
+        Senha <small>(mínimo 6 caracteres)</small>
+        <input type="password" name="senha" autocomplete="new-password" minlength="6" required>
+      </label>
+      <button class="btn btn-principal" type="submit">Criar conta de cliente</button>
+    </form>
+
+    <p class="login-erro" id="login-erro" role="alert" hidden></p>
+
+    <details class="login-demo">
+      <summary>Contas de demonstração</summary>
+      <button type="button" class="demo" data-email="admin@loja.com" data-senha="admin123">
+        <strong>Profissional</strong> admin@loja.com / admin123
+      </button>
+      <button type="button" class="demo" data-email="cliente@loja.com" data-senha="cliente123">
+        <strong>Cliente</strong> cliente@loja.com / cliente123
+      </button>
+    </details>
+  </main>
+
+  <script src="/scripts/comum.js"></script>
+  <script src="/scripts/login.js"></script>
+</body>
+</html>

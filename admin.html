@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Área do profissional • LojinhaDev</title>
+  <link rel="stylesheet" href="/style/global.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-conteudo">
+      <span class="logo">🛒 Lojinha<strong>Dev</strong> <span class="selo-admin">Profissional</span></span>
+      <div class="navbar-acoes">
+        <span class="navbar-usuario">Olá, <b id="nome-usuario">…</b></span>
+        <a class="link-nav" href="/loja">Ver loja</a>
+        <button class="link-nav link-sair" id="btn-sair" type="button">Sair</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="admin">
+
+    <section class="estatisticas" id="estatisticas" aria-label="Resumo da loja"></section>
+
+    <div class="admin-grade">
+
+      <!-- Cadastro / edição -->
+      <section class="painel">
+        <div class="painel-titulo">
+          <h2 id="titulo-form">Cadastrar produto</h2>
+        </div>
+
+        <form id="form-produto" class="formulario" novalidate>
+          <div class="linha-campos">
+            <label class="campo-icone">
+              Ícone
+              <input type="text" name="icone" maxlength="8" placeholder="📦">
+            </label>
+            <label class="campo-cresce">
+              Nome *
+              <input type="text" name="nome" maxlength="80" required>
+            </label>
+          </div>
+
+          <label>
+            Categoria
+            <input type="text" name="categoria" maxlength="40" list="lista-categorias" placeholder="Ex.: Teclados">
+            <datalist id="lista-categorias"></datalist>
+          </label>
+
+          <label>
+            Descrição
+            <textarea name="descricao" maxlength="300" rows="3"></textarea>
+          </label>
+
+          <div class="linha-campos">
+            <label class="campo-cresce">
+              Preço (R$) *
+              <input type="number" name="preco" min="0" step="0.01" required>
+            </label>
+            <label class="campo-cresce">
+              Quantidade em estoque *
+              <input type="number" name="estoque" min="0" step="1" value="0" required>
+            </label>
+          </div>
+
+          <div class="form-botoes">
+            <button class="btn btn-secundario" id="btn-cancelar-edicao" type="button" hidden>Cancelar</button>
+            <button class="btn" id="btn-salvar" type="submit">Cadastrar produto</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Estoque -->
+      <section class="painel">
+        <div class="painel-titulo">
+          <h2>Estoque</h2>
+          <input type="search" id="busca-admin" class="busca-pequena" placeholder="Filtrar…" aria-label="Filtrar produtos">
+        </div>
+        <div class="tabela-rolagem">
+          <table class="tabela">
+            <thead>
+              <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="tabela-produtos"></tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <section class="painel">
+      <div class="painel-titulo">
+        <h2>Últimos pedidos</h2>
+        <button class="link-nav" id="btn-atualizar-pedidos" type="button">Atualizar</button>
+      </div>
+      <div id="lista-pedidos" class="lista-pedidos grade-pedidos"></div>
+    </section>
+
+  </main>
+
+  <!-- Confirmação de exclusão -->
+  <div class="modal-fundo" id="modal-excluir" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="titulo-excluir">
+      <div class="modal-cabecalho">
+        <h2 id="titulo-excluir">Excluir produto</h2>
+        <button class="modal-fechar" data-fechar-modal aria-label="Fechar">✕</button>
+      </div>
+      <p id="texto-excluir"></p>
+      <div class="modal-rodape">
+        <button class="btn btn-secundario" data-fechar-modal type="button">Cancelar</button>
+        <button class="btn btn-perigo" id="btn-confirmar-excluir" type="button">Excluir</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="aviso" id="aviso" role="status"></div>
+
+  <script src="/scripts/comum.js"></script>
+  <script src="/scripts/admin.js"></script>
+</body>
+</html>
