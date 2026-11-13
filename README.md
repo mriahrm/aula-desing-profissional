@@ -1,6 +1,6 @@
 # LojinhaDev — loja de periféricos
 
-<<<<<<< HEAD
+
 Loja virtual de periféricos de informática com login, catálogo, carrinho e
 uma área para o profissional cadastrar produtos e controlar o estoque.
 
@@ -94,4 +94,3 @@ SE DER MUITO RUIM: Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 pip install -r requirements.txt
 python app.py
->>>>>>> c5dfe909b4ecef2003c4db735d56d3f86c8a2890
